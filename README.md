@@ -39,7 +39,7 @@ Note - Before we move any further, we want to thank team Matterport for sharing 
 
 Mask R-CNN model requires that the images be annotated to specify the area of interest in image. We used VIA [VGG Image Annotator](http://www.robots.ox.ac.uk/~vgg/software/via/). Below is how our annotated file looked like:
 
-[alt text](https://github.com/divyahanda219/DH-Project-Website/blob/master/annotated.png)
+![alt text](https://github.com/divyahanda219/DH-Project-Website/blob/master/annotated.png)
 
 
 Once the annotation is done, download the json file. Split the annotated images into training and validation sets.  
