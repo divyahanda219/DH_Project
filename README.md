@@ -73,7 +73,7 @@ Training the model is computationally intensive. We suggest using gpu and not cp
 
 To evaluate the model, load the trained weights file and the model. Run the detection. We used [inspect model](https://github.com/matterport/Mask_RCNN/blob/v2.1/samples/balloon/inspect_balloon_model.ipynb. But since we were more interested to run the detection on videos we added a few extra steps [inspired by](https://www.dlology.com/blog/how-to-run-object-detection-and-segmentation-on-video-fast-for-free). You can find our complete code here. The processing of videos will be done on frame by frame basis, meaning that detection will be run for each frame of the video. Now, you could also change that and instead batch process every 3 frames or more (depending on your system). But because our images were too large and system not too fast, we stuck to processing one frame at a time. Below is an example of how the detection looked like in one of the frames: 
 
-![Refer to Readme if image doesn't open](https://github.com/divyahanda219/DH-Project-Website/blob/master/Detection.png)
+![Refer to Readme if image doesn't open](https://raw.githubusercontent.com/divyahanda219/DH-Project-Website/master/Detection.png)
 
 Once the images are processed (ran detection), we process the images back to a video and an output video contatining detections is generated.     
 
