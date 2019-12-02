@@ -10,8 +10,9 @@ In this project, we use Machine learning algorithm Mask R-CNN to train our model
         
 ### What is Machine Learning?
 
-Machine Learning is a techonology that gives the computers the "ability to learn". Machine learning algorithms build a mathematical model based on sample data, known as "training data", in order to make predictions or decisions without being explicitly programmed to perform the task. To dive deeper into what is machine learning, here is a wonderful video that you can refer to [I'm an inline-style link](https://royalsociety.org/topics-policy/projects/machine-learning/videos-and-background-information/). 
-        In this module, we will train our computer to identify and track pigs. 
+Machine Learning is a techonology that gives the computers the "ability to learn". Machine learning algorithms build a mathematical model based on sample data, known as "training data", in order to make predictions or decisions without being explicitly programmed to perform the task. To dive deeper into what is machine learning, you can refer to [this video](https://royalsociety.org/topics-policy/projects/machine-learning/videos-and-background-information/). 
+
+In this module, we will train our computer to identify and track pigs. 
 
 ### What is Mask R-CNN?
 
