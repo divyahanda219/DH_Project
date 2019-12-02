@@ -44,7 +44,7 @@ Note - Before we move any further, we want to thank team Matterport for sharing 
     
 ### Annotating the images
 
-Mask R-CNN model requires that the images be annotated to specify the area of interest in image. We used VIA [VGG Image Annotator](http://www.robots.ox.ac.uk/~vgg/software/via/). Below is how our annotated file looked like:
+Mask R-CNN model requires that the images be annotated to specify the area of interest in image. We used VIA [VGG Image Annotator](http://www.robots.ox.ac.uk/~vgg/software/via/). This is a little time consuming part. Below is how our annotated file looked like:
 
 ![Check Readme if image doesn't open](https://github.com/divyahanda219/DH-Project-Website/blob/master/annotated.png)
 
