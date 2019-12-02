@@ -33,7 +33,7 @@ Transfer learning simply means that we are not training the model from scratch. 
 
 So now, we know that we don't need thousands of images (not always though) to train our model. Also, we know that COCO dataset doesnot contain a class for pig identification. Our next step is to get our images ready for processing.
 
-Note - Before we move any further, let us thank team Matterport for sharing the code for training own data using Mask R-CNN. We adapted and modified their code to suit our project. You can find the original code [here](https://github.com/matterport/Mask_RCNN).  
+Note - Before we move any further, we want to thank team Matterport for sharing the code for training own data using Mask R-CNN. We adapted and modified their code to suit our project. You can find the original code [here](https://github.com/matterport/Mask_RCNN).  
     
 ### Annotating the images
 
@@ -42,9 +42,19 @@ Mask R-CNN model requires that the images be annotated to specify the area of in
 
 Once the annotation is done, download the json file. Split the annotated images into training and validation sets.  
 
-### Model the data
+### Training the Model
 
-Build a model, fit the model, validate the model.
+Our model is now ready to be trained. We used the [balloon.py](https://github.com/matterport/Mask_RCNN/blob/v2.1/samples/balloon/balloon.py) code by Matterport to train our model. You can find my code here. To train our model, we set 30 iterations of 100 epochs each. 
+
+Use the following command to train the model. 
+
+python Pig.py train --dataset=/path/to/dataset --weights=coco
+
+Incase, you wish to continue training from where you left off, use:
+
+python Pig.py train --dataset=/path/to/dataset --weights=last
+
+Training the model is computationally intensive. We suggest using gpu and not cpu for this purpose. It took us around 4 hours to train our model. The size of images also plays a role in time consumed. After the training is complete, you should get a trained weights file.
 
 ### Communciate and visualize the results
 
