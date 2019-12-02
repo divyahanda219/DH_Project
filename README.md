@@ -25,7 +25,7 @@ In this module, we will train our computer to identify and track pigs.
 
 Mask R-CNN is a machine learning algorithm that predicts the presence of an object in an image by generating bounding boxes and masks. There are two stages of Mask RCNN. First, it generates proposals about the regions where there might be an object based on the input image. Second, it predicts the class of the object, refines the bounding box and generates a mask in pixel level of the object based on the first stage proposal. Here is an example of what the image looks like after detection. 
 
-![Check Readme if image doesn't open](https://github.com/divyahanda219/DH-Project-Website/blob/master/MaskRCNN.png "Source: Mask RCNN paper")
+![Check Readme if image doesn't open](https://raw.githubusercontent.com/divyahanda219/DH-Project-Website/master/MaskRCNN.png "Source: Mask RCNN paper")
 
 ### Data description
 
@@ -65,7 +65,9 @@ python Pig.py train --dataset=/path/to/dataset --weights=coco
 python Pig.py train --dataset=/path/to/dataset --weights=last
 ```
 
-Training the model is computationally intensive. We suggest using gpu and not cpu for this purpose. It took us around 4 hours to train our model. The size of images also plays a role in time consumed. After the training is complete, you should get a trained weights file.
+Training the model is computationally intensive. We suggest using gpu and not cpu for this purpose. It took us around 4 hours to train our model. The size of images also plays a role in time consumed. After the training is complete, you should get a trained weights file. When we finished training, a loss of 0.2082 (shown below) was reported. 
+
+![Refer to Readme if image doesn't open](https://github.com/divyahanda219/DH-Project-Website/blob/master/Detection.png)
 
 ### Evaluate the model
 
