@@ -26,16 +26,21 @@ The data for this project consists of day and night videos of pigs from a commer
 
 Usually, a lot of images are required to train a model. But here, we are going to take advantage of transfer learning (expalined below).So for this project we initially decided to use 70 images. But because this is computationally intensive, we reduced the number of images to 48. 40 for training and 8 for validation. Check out some of the images below that I used for this project.
 
-Tip- After running the training we realized that it is better to reduce the dimensions of the images and then proceed any further.For this module however, image size was not reduced. 
+Tip- After running the training we realized that it is better to reduce the dimensions of the images and then proceed any further. For this module however, image size was not reduced. 
 
 ### Transfer learning
 Transfer learning simply means that we are not training the model from scratch. We rely on weights file that has already been trained to identify a variety of other classes. Here, we will use weights from COCO dataset. We have added the weights file in github repo. COCO dataset is a dataset that contains nearly 120k images, so the weights have learned to identify a lot of different objects. You can find the list of classes that COCO dataset is trained to identify [here](https://github.com/amikelive/coco-labels/blob/master/coco-labels-paper.txt). 
 
-So now, we know that we don't need thousands of images (not always though) to train our model. Also, we know that COCO dataset doesnot contain a class for pig identification. Our next step is to get our images ready for processing
+So now, we know that we don't need thousands of images (not always though) to train our model. Also, we know that COCO dataset doesnot contain a class for pig identification. Our next step is to get our images ready for processing.
+
+Note - Before we move any further, let us thank team Matterport for sharing the code for training own data using Mask R-CNN. We adapted and modified their code to suit our project. You can find the original code [here](https://github.com/matterport/Mask_RCNN).  
     
 ### Annotating the images
 
-Demonstrate what you would do to describe the data and if it has any patterns or anomolies.  Make some plots.
+Mask R-CNN model requires that the images be annotated to specify the area of interest in image. We used VIA [VGG Image Annotator](http://www.robots.ox.ac.uk/~vgg/software/via/). Below is how our annotated file looked like:
+
+
+Once the annotation is done, download the json file. Split the annotated images into training and validation sets.  
 
 ### Model the data
 
