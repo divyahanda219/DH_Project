@@ -57,10 +57,10 @@ Our model is now ready to be trained. We used the [balloon.py](https://github.co
 
 Use the following command to train the model. 
 
-```python
+```
 python Pig.py train --dataset=/path/to/dataset --weights=coco
 
-Incase, you wish to continue training from where you left off, use:
+## Incase, you wish to continue training from where you left off, use:
 
 python Pig.py train --dataset=/path/to/dataset --weights=last
 ```
