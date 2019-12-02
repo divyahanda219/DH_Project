@@ -2,7 +2,7 @@ import numpy as np
 import cv2, os
 
 # read the video and extract info about it
-video = "ch07_20190301140441.mp4"
+video = "#insert_the_video_name"
 
 cap = cv2.VideoCapture(video)
 width, height, frate = int(cap.get(3)), int(cap.get(4)), int(cap.get(5))
