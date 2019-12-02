@@ -17,7 +17,7 @@ Machine Learning is a techonology that gives the computers the "ability to learn
 
 Mask R-CNN is a machine learning algorithm that predicts the presence of an object in an image by generating bounding boxes and masks. There are two stages of Mask RCNN. First, it generates proposals about the regions where there might be an object based on the input image. Second, it predicts the class of the object, refines the bounding box and generates a mask in pixel level of the object based on the first stage proposal. Here is an example of what the image looks like after detection. 
 
-![alt text](https://github.com/divyahanda219/DH-Project-Website/MaskRcnn.png "Source: Mask RCNN paper")
+![alt text](https://github.com/divyahanda219/DH-Project-Website/blob/master/MaskRCNN.png "Source: Mask RCNN paper")
 
 ### Data description
 
