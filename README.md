@@ -24,7 +24,7 @@ Mask R-CNN is a machine learning algorithm that predicts the presence of an obje
 
 The data for this project consists of day and night videos of pigs from a commerical pig farm in Iowa. The videos were recorded using a simple camera.To get the data ready for Mask R-CNN algorithm, we will first extract images from the videos. You could also download images from google or any other source depending on the requirements of your project. Check out the code below for extracting images or you could download it from [here](https://github.com/divyahanda219/DH-Project-Website/blob/master/Extractimages.py).
 
-Usually, a lot of images are required to train a model. But here, we are going to take advantage of transfer learning (expalined below).So for this project we initially decided to use 70 images. But because this is computationally intensive, we reduced the number of images to 48. 40 for training and 8 for validation. Check out some of the images below that I used for this project.
+Usually, a lot of images are required to train a model. But here, we are going to take advantage of transfer learning (expalined below). So, for this project we initially decided to use 70 images. But because this is computationally intensive, we reduced the number of images to 48. 40 for training and 8 for validation. Check out some of the images below that we used for this project.
 
 Tip- After running the training we realized that it is better to reduce the dimensions of the images and then proceed any further. For this module however, image size was not reduced. 
 
