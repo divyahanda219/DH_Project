@@ -22,7 +22,41 @@ Mask R-CNN is a machine learning algorithm that predicts the presence of an obje
 
 ### Data description
 
-The data for this project consists of day and night videos of pigs from a commerical pig farm in Iowa. The videos were recorded using a simple camera.What kind of data is avialble?  How is your data collected?  Are there any concerns about the data?  Which data is the most relevant?  Is the data easy to acccess? Will the data change over time?  What needs to be done to the data to get it ready for any downstream analysis?
+The data for this project consists of day and night videos of pigs from a commerical pig farm in Iowa. The videos were recorded using a simple camera.To get the data ready for Mask R-CNN algorithm, we will first extract images from the videos. You could also download images from google or any other source depending on the requirements of your project. Check out the code below for extracting images or you could download it from [here](https://github.com/divyahanda219/DH-Project-Website/blob/master/Extractimages.py)
+
+ ```yml
+    import numpy as np
+import cv2, os
+
+# read the video and extract info about it
+video = "#insert_the_video_name"
+
+cap = cv2.VideoCapture(video)
+width, height, frate = int(cap.get(3)), int(cap.get(4)), int(cap.get(5))
+folder, file = os.path.split(video)
+
+# make the folder to save file
+
+output = os.path.join("output", file[:-9])
+if not os.path.exists(output):
+	os.makedirs(output)
+
+
+# get total number of frames
+totalFrames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+x = [i for i in range (1, totalFrames) if divmod(i, int(frate*60))[1]==0]
+
+
+print (x)
+for myFrameNumber in x:
+	cap.set(cv2.CAP_PROP_POS_FRAMES,myFrameNumber)
+	while True:
+		ret, frame = cap.read()
+		out_name = os.path.join(output, (str(file[:-9])+"_"+str(myFrameNumber)+".png"))
+		cv2.imwrite(out_name, frame)
+		break
+    
+    ```
 
 ### Explore the data
 
