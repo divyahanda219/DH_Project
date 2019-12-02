@@ -3,10 +3,10 @@
 Animal behavior and health are closely related to each other. Monitoring animals can give an insight into animal health.Traditionally, the producers rely on humans to monitor their animals. This practice is time consuming and prone to human pereception errors. In a commercial farm the average attention received is around 3sec/animal. Some studies have made use of thermal cameras, kinetic sensors, drawing ink patterns etc to track animals. However, these methods are expensive and can not be replicated in commercial farm setup.
 
 In this project, we use Machine learning algorithm Mask R-CNN to train our model to track pigs in a commercial farm set up. The only expense required is setting up of a camera (any) at the farm to collect data. The method suggested by us:
- ..* Is economical
- ..* Doesnot interefere with farm activities
- ..* Is independent of human biases and errors
- ..* Can act as decision making tool 
+   * Is economical
+   * Doesnot interefere with farm activities
+   * Is independent of human biases and errors
+   * Can act as decision making tool 
         
 ### What is Machine Learning?
 
