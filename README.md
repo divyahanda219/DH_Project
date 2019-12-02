@@ -57,11 +57,13 @@ Our model is now ready to be trained. We used the [balloon.py](https://github.co
 
 Use the following command to train the model. 
 
+```python
 python Pig.py train --dataset=/path/to/dataset --weights=coco
 
 Incase, you wish to continue training from where you left off, use:
 
 python Pig.py train --dataset=/path/to/dataset --weights=last
+```
 
 Training the model is computationally intensive. We suggest using gpu and not cpu for this purpose. It took us around 4 hours to train our model. The size of images also plays a role in time consumed. After the training is complete, you should get a trained weights file.
 
