@@ -31,7 +31,7 @@ Mask R-CNN is a machine learning algorithm that predicts the presence of an obje
 
 The data for this project consists of day and night videos of pigs from a commerical pig farm in Iowa. The videos were recorded using a simple camera.To get the data ready for Mask R-CNN algorithm, we will first extract images from the videos. You could also download images from google or any other source depending on the requirements of your project. Check out the code below for extracting images or you could download it from [here](https://github.com/divyahanda219/DH-Project-Website/blob/master/Extractimages.py).
 
-Usually, a lot of images are required to train a model. But here, we are going to take advantage of transfer learning (expalined below). So, for this project we initially decided to use 70 images. But because this is computationally intensive, we reduced the number of images to 48. 40 for training and 8 for validation. Check out some of the images below that we used for this project.
+Usually, a lot of images are required to train a model. But here, we are going to take advantage of transfer learning (expalined below). So, for this project we initially decided to use 70 images. But because this is computationally intensive, we reduced the number of images to 48. For training 40 images, and 8 for validation. Check out some of the images below that we used for this project.
 
 Tip- After running the training we realized that it is better to reduce the dimensions of the images and then proceed any further. For this module however, image size was not reduced. 
 
@@ -54,6 +54,57 @@ Once the annotation is done, download the json file. Split the annotated images 
 ### Training the Model
 
 Our model is now ready to be trained. We used the [balloon.py](https://github.com/matterport/Mask_RCNN/blob/v2.1/samples/balloon/balloon.py) code by Matterport to train our model. You can find our complete code here. To train our model, we set 30 iterations of 100 epochs each. 
+
+```python
+class PigDataset(utils.Dataset):
+
+    def load_Pig(self, dataset_dir, subset):
+        """Load a subset of the Pig dataset.
+        dataset_dir: Root directory of the dataset.
+        subset: Subset to load: train or val
+        """
+        # Add classes. We have only one class to add.
+        self.add_class("Pig", 1, "Pig")
+
+        # Train or validation dataset?
+        import pathlib
+        from pathlib import Path
+        assert subset  in ["train", "val"]
+   
+        dataset_dir = Path(r"C:\Users\HiiLab\Documents\Maskrcnnd\balloon\images", subset)
+        
+        # Load annotations
+        # We mostly care about the x and y coordinates of each region
+       
+        annotations = json.load(open(os.path.join(dataset_dir,'via_export_json.json')))
+        annotations = list(annotations.values())  # don't need the dict keys
+
+        # Skip unannotated images.
+        annotations = [a for a in annotations if a['regions']]
+
+        # Add images
+        for a in annotations:
+            # Get the x, y coordinaets of points of the polygons that make up
+            # the outline of each object instance. These are stores in the shape_attribute
+         
+            if type(a['regions']) is dict:
+                polygons = [r['shape_attributes'] for r in a['regions'].values()]
+            else:
+                polygons = [r['shape_attributes'] for r in a['regions']] 
+
+            # load_mask() needs the image size to convert polygons to masks.
+           
+            image_path = os.path.join(dataset_dir, a['filename'])
+            image = skimage.io.imread(image_path)
+            height, width = image.shape[:2]
+
+            self.add_image(
+                "Pig",
+                image_id=a['filename'],  # use file name as a unique image id
+                path=image_path,
+                width=width, height=height,
+                polygons=polygons)
+ ```        
 
 Use the following command to train the model. 
 
