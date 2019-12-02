@@ -46,7 +46,7 @@ Note - Before we move any further, we want to thank team Matterport for sharing 
 
 Mask R-CNN model requires that the images be annotated to specify the area of interest in image. We used VIA [VGG Image Annotator](http://www.robots.ox.ac.uk/~vgg/software/via/). This is a little time consuming part. Below is how our annotated file looked like:
 
-![Check Readme if image doesn't open](https://github.com/divyahanda219/DH-Project-Website/blob/master/annotated.png)
+![Check Readme if image doesn't open](https://raw.githubusercontent.com/divyahanda219/DH-Project-Website/master/annotated.png)
 
 
 Once the annotation is done, download the json file. Split the annotated images into training and validation sets.  
@@ -67,7 +67,7 @@ python Pig.py train --dataset=/path/to/dataset --weights=last
 
 Training the model is computationally intensive. We suggest using gpu and not cpu for this purpose. It took us around 4 hours to train our model. The size of images also plays a role in time consumed. After the training is complete, you should get a trained weights file. When we finished training, a loss of 0.2082 (shown below) was reported. 
 
-![Refer to Readme if image doesn't open](https://github.com/divyahanda219/DH-Project-Website/blob/master/Detection.png)
+![Refer to Readme if image doesn't open](https://raw.githubusercontent.com/divyahanda219/DH-Project-Website/master/LossFunction.png)
 
 ### Evaluate the model
 
