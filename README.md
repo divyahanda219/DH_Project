@@ -18,7 +18,7 @@ In this module, we will train our computer to identify and track pigs.
 
 Mask R-CNN is a machine learning algorithm that predicts the presence of an object in an image by generating bounding boxes and masks. There are two stages of Mask RCNN. First, it generates proposals about the regions where there might be an object based on the input image. Second, it predicts the class of the object, refines the bounding box and generates a mask in pixel level of the object based on the first stage proposal. Here is an example of what the image looks like after detection. 
 
-![alt text](https://github.com/divyahanda219/DH-Project-Website/blob/master/MaskRCNN.png "Source: Mask RCNN paper")
+![Check Readme if image doesn't open](https://github.com/divyahanda219/DH-Project-Website/blob/master/MaskRCNN.png "Source: Mask RCNN paper")
 
 ### Data description
 
@@ -39,12 +39,14 @@ Note - Before we move any further, we want to thank team Matterport for sharing 
 
 Mask R-CNN model requires that the images be annotated to specify the area of interest in image. We used VIA [VGG Image Annotator](http://www.robots.ox.ac.uk/~vgg/software/via/). Below is how our annotated file looked like:
 
+[alt text](https://github.com/divyahanda219/DH-Project-Website/blob/master/annotated.png)
+
 
 Once the annotation is done, download the json file. Split the annotated images into training and validation sets.  
 
 ### Training the Model
 
-Our model is now ready to be trained. We used the [balloon.py](https://github.com/matterport/Mask_RCNN/blob/v2.1/samples/balloon/balloon.py) code by Matterport to train our model. You can find my code here. To train our model, we set 30 iterations of 100 epochs each. 
+Our model is now ready to be trained. We used the [balloon.py](https://github.com/matterport/Mask_RCNN/blob/v2.1/samples/balloon/balloon.py) code by Matterport to train our model. You can find our complete code here. To train our model, we set 30 iterations of 100 epochs each. 
 
 Use the following command to train the model. 
 
