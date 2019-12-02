@@ -7,7 +7,14 @@ In this project, we use Machine learning algorithm Mask R-CNN to train our model
    * Doesnot interefere with farm activities
    * Is independent of human biases and errors
    * Can act as decision making tool 
-        
+
+### After following this tutorial you will know how to:
+  * Extract images from videos
+  * Annotate your images
+  * Train your model to detect the class specified by you
+  * Evaluate the model you trained
+  
+
 ### What is Machine Learning?
 
 Machine Learning is a techonology that gives the computers the "ability to learn". Machine learning algorithms build a mathematical model based on sample data, known as "training data", in order to make predictions or decisions without being explicitly programmed to perform the task. To dive deeper into what is machine learning, you can refer to [this video](https://royalsociety.org/topics-policy/projects/machine-learning/videos-and-background-information/). 
@@ -39,7 +46,7 @@ Note - Before we move any further, we want to thank team Matterport for sharing 
 
 Mask R-CNN model requires that the images be annotated to specify the area of interest in image. We used VIA [VGG Image Annotator](http://www.robots.ox.ac.uk/~vgg/software/via/). Below is how our annotated file looked like:
 
-![alt text](https://github.com/divyahanda219/DH-Project-Website/blob/master/annotated.png)
+![Check Readme if image doesn't open](https://github.com/divyahanda219/DH-Project-Website/blob/master/annotated.png)
 
 
 Once the annotation is done, download the json file. Split the annotated images into training and validation sets.  
@@ -58,9 +65,14 @@ python Pig.py train --dataset=/path/to/dataset --weights=last
 
 Training the model is computationally intensive. We suggest using gpu and not cpu for this purpose. It took us around 4 hours to train our model. The size of images also plays a role in time consumed. After the training is complete, you should get a trained weights file.
 
-### Communciate and visualize the results
+### Evaluate the model
 
-What did you learn and do the results make sense?  Revisit your initial question and answer it.  H
+To evaluate the model, load the trained weights file and the model. Run the detection. We used [inspect model](https://github.com/matterport/Mask_RCNN/blob/v2.1/samples/balloon/inspect_balloon_model.ipynb. But since we were more interested to run the detection on videos we added a few extra steps [inspired by](https://www.dlology.com/blog/how-to-run-object-detection-and-segmentation-on-video-fast-for-free). You can find our complete code here. The processing of videos will be done on frame by frame basis, meaning that detection will be run for each frame of the video. Now, you could also change that and instead batch process every 3 frames or more (depending on your system). But because our images were too large and system not too fast, we stuck to processing one frame at a time. Below is an example of how the detection looked like in one of the frames: 
+
+![alt text][https://github.com/divyahanda219/DH-Project-Website/blob/master/Detection.png]
+
+Once the images are processed (ran detection), we process the images back to a video and an output video contatining detections is generated.     
+
 
 ### Class Exercise
 
