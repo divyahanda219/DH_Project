@@ -139,7 +139,7 @@ We trained the model using Mask R-CNN algorithm. The weights were trained using 
 
 ### Class Exercise
 
-For the homework assignment let's work on detecting pigs using Mask R-CNN in images. You can refer to readme file incase you wish to create your own class from scratch. But since annotating and training take up a lot of time, in this tutorial we shall stick to using the weights that I already trained. You can download them here. 
+For the guided assignment let's work on detecting pigs using Mask R-CNN in images. You can refer to readme file incase you wish to create your own class from scratch. But since annotating and training take up a lot of time, in this tutorial we shall stick to using the weights that I already trained. You can refer to [this python notebook](https://github.com/divyahanda219/DH-Project-Website/blob/master/Sample_Annotation_Example.ipynb) to proceed further.  
 
 
 
