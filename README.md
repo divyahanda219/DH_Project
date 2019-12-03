@@ -139,11 +139,8 @@ We trained the model using Mask R-CNN algorithm. The weights were trained using 
 
 ### Class Exercise
 
-For the homework assignment let's   This should be a reproducible notebook that allows them to learn one or more aspects of your data workflow.  It is also an opportunity to share your research with your colleagues.
+For the homework assignment let's work on detecting pigs using Mask R-CNN in images. You can refer to readme file incase you wish to create your own class from scratch. But since annotating and training take up a lot of time, in this tutorial we shall stick to using the weights that I already trained. You can download them here. 
 
-Here is an example of a fantastic project website:
-
-https://stephenslab.github.io/ipynb-website/
 
 
 
