@@ -124,12 +124,18 @@ Training the model is computationally intensive. We suggest using gpu and not cp
 
 To evaluate the model, load the trained weights file and the model. Run the detection. We used [inspect model](https://github.com/matterport/Mask_RCNN/blob/v2.1/samples/balloon/inspect_balloon_model.ipynb. But since we were more interested to run the detection on videos we added a few extra steps [inspired by](https://www.dlology.com/blog/how-to-run-object-detection-and-segmentation-on-video-fast-for-free). We chose one of the daytime video to test our model. You can find our complete code here. 
 
-The processing of videos will be done on frame by frame basis, meaning that detection will be run for each frame of the video. Now, you could also change that and instead batch process every 3 frames or more (depending on your system). But because our images were too large and system not too fast, we stuck to processing one frame at a time. Processing each frame (image) took nearly 5 seconds. The frame rate of our test video was 10 frames/sec. The test video was 3 minutes long. But to save time we processed it for 1 min. Below is an example of how the detection looked like in one of the frames: 
+The processing of videos will be done on frame by frame basis, meaning that detection will be run for each frame of the video. Now, you could also change that and instead batch process every 3 frames or more (depending on your system). But because our images were too large and system not too fast, we stuck to processing one frame at a time. Processing each frame (image) took nearly 5 seconds. The frame rate of our test video was 10 frames/sec. The test video was 2 minutes and 31 seconds long. Below is an example of how the detection looked like in one of the frames: 
 
 ![Refer to Readme if image doesn't open](https://raw.githubusercontent.com/divyahanda219/DH-Project-Website/master/Detection.png)
 
-The bounding boxes contain label telling us the accuracy of the detection. Once the images are processed (ran detection), we process the images back to a video and an output video contatining detections is generated.     
+The bounding boxes contain label telling us the accuracy of the detection. Once the images are processed (ran detection), we process the images back to a video and an output video contatining detections is generated.  
 
+At first, the output video obtained (shown below) didn't contain bounding boxes and accuracy labels. The video however did contain the mask and could identify and track all the pigs as they moved in the video. After certain number of modifications, we ran the code for detection again. The frame wise output images generated had accuracy labels, masks and bounding boxes. However the size of the output images was too large (each image was in the range of 9600x9600 pixels and there were 1,511 images in total). This was too large for my system to process. So, we could not get output video. But we did get output images for each frame with accuracy between 0.96 to 1.00, which is very high. 
+
+### Summary
+
+We trained the model using Mask R-CNN algorithm. The weights were trained using COCO dataset weights. The model was trained for 30 iterations each containing 100 epochs. A very small loss function of 0.1298 was obtained at the end of training. The trained weights of this project can be used by producers having similar commercial farm setup to identify and track their pigs. The convenient and preferred output of the project would have been to get an output video containing bounding boxes, accuracy labels and masks. However, due to limitations like system configuration and initial mistake of not reducing the size of the image, this could not be achieved properly. For future works, we recommend reducing the size of the image, using AWS or system with higher configurations to train the model.  
+ 
 
 ### Class Exercise
 
