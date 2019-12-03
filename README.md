@@ -31,7 +31,7 @@ Mask R-CNN is a machine learning algorithm that predicts the presence of an obje
 
 The data for this project consists of day and night videos of pigs from a commerical pig farm in Iowa. The videos were recorded using a simple camera.To get the data ready for Mask R-CNN algorithm, we will first extract images from the videos. You could also download images from google or any other source depending on the requirements of your project. Check out the code below for extracting images or you could download it from [here](https://github.com/divyahanda219/DH-Project-Website/blob/master/Extractimages.py).
 
-Usually, a lot of images are required to train a model. But here, we are going to take advantage of transfer learning (expalined below). So, for this project we initially decided to use 70 images. But because this is computationally intensive, we reduced the number of images to 48. For training 40 images, and 8 for validation. Check out some of the images below that we used for this project.
+Usually, a lot of images are required to train a model. But here, we are going to take advantage of transfer learning (expalined below). So, for this project we initially decided to use 70 images. But because this is computationally intensive, we reduced the number of images to 48. For training 40 images, and 8 for validation.
 
 Tip- After running the training we realized that it is better to reduce the dimensions of the images and then proceed any further. For this module however, image size was not reduced. 
 
@@ -49,11 +49,11 @@ Mask R-CNN model requires that the images be annotated to specify the area of in
 ![Check Readme if image doesn't open](https://raw.githubusercontent.com/divyahanda219/DH-Project-Website/master/annotated.png)
 
 
-Once the annotation is done, download the json file. Split the annotated images into training and validation sets.  
+Once the annotation is done, download the json file. Split the annotated images into training and validation sets. You can find my training and validation set here https://drive.google.com/drive/u/0/folders/19HU4b2VL__Ut19FsEweFIHDn2E-5MCys 
 
 ### Training the Model
 
-Our model is now ready to be trained. We used the [balloon.py](https://github.com/matterport/Mask_RCNN/blob/v2.1/samples/balloon/balloon.py) code by Matterport to train our model. You can find our complete code here. To train our model, we set 30 iterations of 100 epochs each. 
+Our model is now ready to be trained. We used the [balloon.py](https://github.com/matterport/Mask_RCNN/blob/v2.1/samples/balloon/balloon.py) code by Matterport to train our model. You can find our complete code [here](https://github.com/divyahanda219/DH-Project-Website/blob/master/Pig.py). To train our model, we set 30 iterations of 100 epochs each. 
 
 ```python
 class PigDataset(utils.Dataset):
@@ -130,7 +130,9 @@ The processing of videos will be done on frame by frame basis, meaning that dete
 
 The bounding boxes contain label telling us the accuracy of the detection. Once the images are processed (ran detection), we process the images back to a video and an output video contatining detections is generated.  
 
-At first, the output video obtained (shown below) didn't contain bounding boxes and accuracy labels. The video however did contain the mask and could identify and track all the pigs as they moved in the video. After certain number of modifications, we ran the code for detection again. The frame wise output images generated had accuracy labels, masks and bounding boxes. However the size of the output images was too large (each image was in the range of 9600x9600 pixels and there were 1,511 images in total). This was too large for my system to process. So, we could not get output video. But we did get output images for each frame with accuracy between 0.96 to 1.00, which is very high. 
+At first, the output video obtained, refer to (https://github.com/divyahanda219/DH-Project-Website/blob/master/Media2.mp4) didn't contain bounding boxes and accuracy labels. The video however did contain the mask and could identify and track all the pigs as they moved in the video. 
+
+After certain number of modifications, we ran the code for detection again. The frame wise output images generated had accuracy labels, masks and bounding boxes. However the size of the output images was too large (each image was in the range of 9600x9600 pixels and there were 1,511 images in total). This was too large for my system to process. So, we could not get output video. But we did get output images for each frame with accuracy between 0.96 to 1.00, which is very high. The dataset obtained was too large to share here, we can provide with it if needed. 
 
 ### Summary
 
