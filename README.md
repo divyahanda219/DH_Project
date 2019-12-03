@@ -128,12 +128,12 @@ The processing of videos will be done on frame by frame basis, meaning that dete
 
 ![Refer to Readme if image doesn't open](https://raw.githubusercontent.com/divyahanda219/DH-Project-Website/master/Detection.png)
 
-Once the images are processed (ran detection), we process the images back to a video and an output video contatining detections is generated.     
+The bounding boxes contain label telling us the accuracy of the detection. Once the images are processed (ran detection), we process the images back to a video and an output video contatining detections is generated.     
 
 
 ### Class Exercise
 
-In each project, I'd like to see a homework assignment that the class can do/evaluate to learn more about your data.  This should be a reproducible notebook that allows them to learn one or more aspects of your data workflow.  It is also an opportunity to share your research with your colleagues.
+For the homework assignment let's   This should be a reproducible notebook that allows them to learn one or more aspects of your data workflow.  It is also an opportunity to share your research with your colleagues.
 
 Here is an example of a fantastic project website:
 
