@@ -49,11 +49,11 @@ Mask R-CNN model requires that the images be annotated to specify the area of in
 ![Check Readme if image doesn't open](https://raw.githubusercontent.com/divyahanda219/DH-Project-Website/master/annotated.png)
 
 
-Once the annotation is done, download the json file. Split the annotated images into training and validation sets. You can find my training and validation set here https://drive.google.com/drive/u/0/folders/19HU4b2VL__Ut19FsEweFIHDn2E-5MCys 
+Once the annotation is done, download the json file. Split the annotated images into training and validation sets. You can find my training and validation set [here](https://drive.google.com/drive/u/0/folders/19HU4b2VL__Ut19FsEweFIHDn2E-5MCys?usp=sharing) 
 
 ### Training the Model
 
-Our model is now ready to be trained. We used the [balloon.py](https://github.com/matterport/Mask_RCNN/blob/v2.1/samples/balloon/balloon.py) code by Matterport to train our model. You can find our complete code [here](https://github.com/divyahanda219/DH-Project-Website/blob/master/Pig.py). To train our model, we set 30 iterations of 100 epochs each. 
+Our model is now ready to be trained. We used the [balloon.py](https://github.com/matterport/Mask_RCNN/blob/v2.1/samples/balloon/balloon.py) code by Matterport to train our model. You can find our complete code [here](https://github.com/divyahanda219/DH-Project-Website/blob/master/Pig.py). To train our model, we set 30 iterations of 100 epochs each. To train the model we need [this mrcnn folder](https://drive.google.com/drive/u/0/folders/19HU4b2VL__Ut19FsEweFIHDn2E-5MCys?usp=sharing) in the same repository as Pig.py file. This folder will help load the needed dependencies. 
 
 ```python
 class PigDataset(utils.Dataset):
@@ -116,13 +116,13 @@ python Pig.py train --dataset=/path/to/dataset --weights=coco
 python Pig.py train --dataset=/path/to/dataset --weights=last
 ```
 
-Training the model is computationally intensive. We suggest using gpu and not cpu for this purpose. It took us around 4 hours to train our model. The size of images also plays a role in time consumed. After the training is complete, you should get a trained weights file. When we finished training, a loss of 0.2082 (shown below) was reported. 
+Training the model is computationally intensive. We suggest using gpu and not cpu for this purpose. It took us around 4 hours to train our model. The size of images also plays a role in time consumed. After the training is complete, you should get a trained weights [file](https://drive.google.com/drive/u/0/folders/19HU4b2VL__Ut19FsEweFIHDn2E-5MCys?usp=sharing). When we finished training, a loss of 0.2082 (shown below) was reported. 
 
 ![Refer to Readme if image doesn't open](https://raw.githubusercontent.com/divyahanda219/DH-Project-Website/master/LossFunction.png)
 
 ### Evaluate the model
 
-To evaluate the model, load the trained weights file and the model. Run the detection. We used [inspect model](https://github.com/matterport/Mask_RCNN/blob/v2.1/samples/balloon/inspect_balloon_model.ipynb. But since we were more interested to run the detection on videos we added a few extra steps [inspired by](https://www.dlology.com/blog/how-to-run-object-detection-and-segmentation-on-video-fast-for-free). We chose one of the daytime video to test our model. You can find our complete code here. 
+To evaluate the model, load the trained weights file and the model. Run the detection. We used [inspect model](https://github.com/matterport/Mask_RCNN/blob/v2.1/samples/balloon/inspect_balloon_model.ipynb. But since we were more interested to run the detection on videos we added a few extra steps [inspired by](https://www.dlology.com/blog/how-to-run-object-detection-and-segmentation-on-video-fast-for-free). We chose one of the daytime video to test our model. You can find our complete code [here](https://github.com/divyahanda219/DH-Project-Website/blob/master/inspect_pig_model.ipynb). 
 
 The processing of videos will be done on frame by frame basis, meaning that detection will be run for each frame of the video. Now, you could also change that and instead batch process every 3 frames or more (depending on your system). But because our images were too large and system not too fast, we stuck to processing one frame at a time. Processing each frame (image) took nearly 5 seconds. The frame rate of our test video was 10 frames/sec. The test video was 2 minutes and 31 seconds long. Below is an example of how the detection looked like in one of the frames: 
 
