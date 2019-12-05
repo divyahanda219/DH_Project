@@ -130,7 +130,7 @@ The processing of videos will be done on frame by frame basis, meaning that dete
 
 The bounding boxes contain label telling us the accuracy of the detection. Once the images are processed (ran detection), we process the images back to a video and an output video contatining detections is generated.  
 
-At first, the output video obtained, refer to (https://github.com/divyahanda219/DH-Project-Website/blob/master/Media2.mp4) didn't contain bounding boxes and accuracy labels. The video however did contain the mask and could identify and track all the pigs as they moved in the video. You can find the output video [here](https://drive.google.com/drive/u/0/folders/19HU4b2VL__Ut19FsEweFIHDn2E-5MCys).
+At first, the output video obtained, refer to (https://github.com/divyahanda219/DH-Project-Website/blob/master/Media2.mp4) didn't contain bounding boxes and accuracy labels. The video however did contain the mask and could identify and track all the pigs as they moved in the video. You can find the output video [here](https://youtu.be/NT9vKsc8adY).
 
 After certain number of modifications, we ran the code for detection again. The frame wise output images generated had accuracy labels, masks and bounding boxes. However the size of the output images was too large (each image was in the range of 9600x9600 pixels and there were 1,511 images in total). This was too large for our system to process. So, we could not get output video. But we did get output images for each frame with accuracy between 0.96 to 1.00, which is very high. The dataset obtained was too large to share here, we can provide with it if needed. 
 
